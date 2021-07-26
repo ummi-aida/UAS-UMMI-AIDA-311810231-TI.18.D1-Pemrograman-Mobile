@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateDailyProdActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/space_top"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cusUpdt_container"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Customer"
+                app:boxCornerRadiusBottomEnd="11dp"
+                app:boxCornerRadiusBottomStart="11dp"
+                app:boxCornerRadiusTopEnd="11dp"
+                app:boxCornerRadiusTopStart="11dp"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/teal_200"
+                app:startIconContentDescription="customer"
+                app:startIconDrawable="@drawable/ic_person"
+                app:startIconTint="@color/blue_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/space_top">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cusUpdt_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:nextFocusDown="@+id/modelUpdt_edt"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/modelUpdt_container"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Model"
+                app:boxCornerRadiusBottomEnd="11dp"
+                app:boxCornerRadiusBottomStart="11dp"
+                app:boxCornerRadiusTopEnd="11dp"
+                app:boxCornerRadiusTopStart="11dp"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/teal_200"
+                app:startIconContentDescription="model"
+                app:startIconDrawable="@drawable/ic_model"
+                app:startIconTint="@color/blue_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cusUpdt_container">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/modelUpdt_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:nextFocusDown="@+id/mTargetUpdt_edt"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mTargetUpdt_container"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Min Target"
+                app:boxCornerRadiusBottomEnd="11dp"
+                app:boxCornerRadiusBottomStart="11dp"
+                app:boxCornerRadiusTopEnd="11dp"
+                app:boxCornerRadiusTopStart="11dp"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/teal_200"
+                app:startIconContentDescription="Min Target"
+                app:startIconDrawable="@drawable/ic_min_target"
+                app:startIconTint="@color/blue_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/modelUpdt_container">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mTargetUpdt_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/runningTimeUpdt_edt"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/runningTimeUpdt_container"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Running Time"
+                app:boxCornerRadiusBottomEnd="11dp"
+                app:boxCornerRadiusBottomStart="11dp"
+                app:boxCornerRadiusTopEnd="11dp"
+                app:boxCornerRadiusTopStart="11dp"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/teal_200"
+                app:startIconContentDescription="Running Time"
+                app:startIconDrawable="@drawable/ic_running_time"
+                app:startIconTint="@color/blue_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mTargetUpdt_container">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/runningTimeUpdt_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/partCodeUpdt_edt"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/partCodeUpdt_container"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Part Code"
+                app:boxCornerRadiusBottomEnd="11dp"
+                app:boxCornerRadiusBottomStart="11dp"
+                app:boxCornerRadiusTopEnd="11dp"
+                app:boxCornerRadiusTopStart="11dp"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/teal_200"
+                app:startIconContentDescription="Part Code"
+                app:startIconDrawable="@drawable/ic_code"
+                app:startIconTint="@color/blue_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/runningTimeUpdt_container">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/partCodeUpdt_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:nextFocusDown="@+id/partNameUpdt_edt"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/partNameUpdt_container"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Part Name"
+                app:boxCornerRadiusBottomEnd="11dp"
+                app:boxCornerRadiusBottomStart="11dp"
+                app:boxCornerRadiusTopEnd="11dp"
+                app:boxCornerRadiusTopStart="11dp"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/teal_200"
+                app:startIconContentDescription="Part Code"
+                app:startIconDrawable="@drawable/ic_code"
+                app:startIconTint="@color/blue_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/partCodeUpdt_container">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/partNameUpdt_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:nextFocusDown="@+id/processNameUpdt_edt"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/processNameUpdt_container"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Process Name"
+                app:boxCornerRadiusBottomEnd="11dp"
+                app:boxCornerRadiusBottomStart="11dp"
+                app:boxCornerRadiusTopEnd="11dp"
+                app:boxCornerRadiusTopStart="11dp"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/teal_200"
+                app:startIconContentDescription="Process Name"
+                app:startIconDrawable="@drawable/ic_gear"
+                app:startIconTint="@color/blue_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/partNameUpdt_container">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/processNameUpdt_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:nextFocusDown="@+id/planQtyUpdt_edt"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/planQtyUpdt_container"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Plan Qty"
+                app:boxCornerRadiusBottomEnd="11dp"
+                app:boxCornerRadiusBottomStart="11dp"
+                app:boxCornerRadiusTopEnd="11dp"
+                app:boxCornerRadiusTopStart="11dp"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/teal_200"
+                app:startIconContentDescription="Plan Qty"
+                app:startIconDrawable="@drawable/ic_plan_qty"
+                app:startIconTint="@color/blue_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/processNameUpdt_container">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/planQtyUpdt_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dateUpdt_container"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Date"
+                android:focusableInTouchMode="false"
+                app:boxCornerRadiusBottomEnd="11dp"
+                app:boxCornerRadiusBottomStart="11dp"
+                app:boxCornerRadiusTopEnd="11dp"
+                app:boxCornerRadiusTopStart="11dp"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/teal_200"
+                app:startIconContentDescription="Date"
+                app:startIconDrawable="@drawable/ic_calendar"
+                app:startIconTint="@color/blue_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/planQtyUpdt_container">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dateUpdt_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:focusableInTouchMode="false"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/idSensorUpdt_container"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Sensor Implemented"
+                android:orientation="horizontal"
+                app:boxCornerRadiusBottomEnd="11dp"
+                app:boxCornerRadiusBottomStart="11dp"
+                app:boxCornerRadiusTopEnd="11dp"
+                app:boxCornerRadiusTopStart="11dp"
+                app:hintTextColor="@color/teal_200"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dateUpdt_container"
+                app:startIconContentDescription="sensor"
+                app:startIconDrawable="@drawable/ic_sensor"
+                app:startIconTint="@color/blue_grey">
+
+                <AutoCompleteTextView
+                    android:id="@+id/sensor_updt_dropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnUpdt_to_link_addSensor"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ripple_btn_blue"
+                android:fontFamily="@font/mmedium"
+                android:text="add new sensor"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:backgroundTint="@null"
+                app:icon="@drawable/ic_add"
+                app:iconGravity="textStart"
+                app:iconSize="18dp"
+                app:iconTint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/idSensorUpdt_container" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/idMaterialUpdt_container"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Select Material"
+                android:orientation="horizontal"
+                app:boxCornerRadiusBottomEnd="11dp"
+                app:boxCornerRadiusBottomStart="11dp"
+                app:boxCornerRadiusTopEnd="11dp"
+                app:boxCornerRadiusTopStart="11dp"
+                app:hintTextColor="@color/teal_200"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnUpdt_to_link_addSensor"
+                app:startIconContentDescription="sensor"
+                app:startIconDrawable="@drawable/ic_sensor"
+                app:startIconTint="@color/blue_grey">
+
+                <AutoCompleteTextView
+                    android:id="@+id/materialid_updt_dropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnUpdt_to_link_addMaterial"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ripple_btn_blue"
+                android:fontFamily="@font/mmedium"
+                android:text="add new material"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:backgroundTint="@null"
+                app:icon="@drawable/ic_add"
+                app:iconGravity="textStart"
+                app:iconSize="18dp"
+                app:iconTint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/idMaterialUpdt_container" />
+
+            <Button
+                android:id="@+id/btn_updt_prod"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/ripple"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:fontFamily="@font/mmedium"
+                android:elevation="0dp"
+                app:backgroundTint="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnUpdt_to_link_addMaterial" />
+
+            <LinearLayout
+                android:id="@+id/loading_updt_prod"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:background="@drawable/ripple"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginTop="24dp"
+                android:visibility="gone"
+                android:elevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnUpdt_to_link_addMaterial">
+
+                <ProgressBar
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:indeterminateTint="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loading..."
+                    android:fontFamily="@font/mmedium"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/space_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_updt_prod" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

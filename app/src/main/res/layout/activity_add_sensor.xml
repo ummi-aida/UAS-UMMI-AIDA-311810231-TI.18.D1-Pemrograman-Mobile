@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    tools:context=".AddSensorActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameSet_container"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Setting Sensor Name"
+        app:boxCornerRadiusBottomEnd="11dp"
+        app:boxCornerRadiusBottomStart="11dp"
+        app:boxCornerRadiusTopEnd="11dp"
+        app:boxCornerRadiusTopStart="11dp"
+        app:endIconMode="clear_text"
+        app:hintTextColor="@color/teal_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconContentDescription="sensor"
+        app:startIconDrawable="@drawable/ic_sensor"
+        app:startIconTint="@color/blue_grey">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameSet_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords"
+            android:singleLine="true" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameSet_container">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/mmedium"
+            android:text="Insert Implement Sensor"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/die_height"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:buttonTint="@color/teal_700"
+            android:checked="false"
+            android:text="Die Hight Detector" />
+
+        <CheckBox
+            android:id="@+id/buckling"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:buttonTint="@color/teal_700"
+            android:checked="false"
+            android:text="Buckling Sensor" />
+
+        <CheckBox
+            android:id="@+id/pass_sensor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:buttonTint="@color/teal_700"
+            android:checked="false"
+            android:text="Pass Sensor" />
+
+        <CheckBox
+            android:id="@+id/miss_feed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:buttonTint="@color/teal_700"
+            android:checked="false"
+            android:text="Miss Feed Sensor" />
+
+        <CheckBox
+            android:id="@+id/body_sensor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:buttonTint="@color/teal_700"
+            android:checked="false"
+            android:text="Body Sensor" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_add_sensor"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/ripple"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="Add"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:fontFamily="@font/mmedium"
+        android:elevation="0dp"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <LinearLayout
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:background="@drawable/ripple"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <ProgressBar
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:indeterminateTint="@color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading..."
+                android:fontFamily="@font/mmedium"
+                android:textColor="@color/white"
+                android:layout_marginStart="5dp"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

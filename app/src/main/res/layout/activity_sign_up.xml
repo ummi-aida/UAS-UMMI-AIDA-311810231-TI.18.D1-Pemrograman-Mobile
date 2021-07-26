@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    tools:context=".SignUpActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daftar Akun Baru"
+        android:textSize="24sp"
+        android:fontFamily="@font/mregular"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Silahkan isi form di bawah ini \n untuk informasi"
+        android:textSize="20sp"
+        android:fontFamily="@font/mlight"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fullname_input"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="Fullname"
+        app:hintTextColor="@color/teal_200"
+        app:startIconContentDescription="username"
+        app:startIconDrawable="@drawable/ic_person"
+        app:startIconTint="@color/blue_grey"
+        app:endIconMode="clear_text"
+        app:boxCornerRadiusBottomEnd="11dp"
+        app:boxCornerRadiusBottomStart="11dp"
+        app:boxCornerRadiusTopEnd="11dp"
+        app:boxCornerRadiusTopStart="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fullname_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nextFocusDown="@+id/email_input_edt"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:inputType="textCapWords" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_input"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Email"
+        app:hintTextColor="@color/teal_200"
+        app:startIconContentDescription="email"
+        app:startIconDrawable="@drawable/ic_email"
+        app:startIconTint="@color/blue_grey"
+        app:endIconMode="clear_text"
+        app:boxCornerRadiusBottomEnd="11dp"
+        app:boxCornerRadiusBottomStart="11dp"
+        app:boxCornerRadiusTopEnd="11dp"
+        app:boxCornerRadiusTopStart="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fullname_input">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_input_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nextFocusDown="@+id/pass_input"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_input"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Password"
+        app:hintTextColor="@color/teal_200"
+        app:startIconContentDescription="password"
+        app:startIconDrawable="@drawable/ic_password"
+        app:startIconTint="@color/blue_grey"
+        app:endIconMode="password_toggle"
+        app:boxCornerRadiusBottomEnd="11dp"
+        app:boxCornerRadiusBottomStart="11dp"
+        app:boxCornerRadiusTopEnd="11dp"
+        app:boxCornerRadiusTopStart="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_input">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pass_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ripple"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_input" />
+
+    <LinearLayout
+        android:id="@+id/loading_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@drawable/ripple"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_input">
+
+        <ProgressBar
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:indeterminateTint="@color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading..."
+            android:fontFamily="@font/mmedium"
+            android:textColor="@color/white"
+            android:layout_marginStart="5dp"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_signup">
+
+        <TextView
+            android:id="@+id/texthaveaccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/mregular"
+            android:paddingEnd="2dp"
+            android:text="Sudah punya akun ?,"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btn_link_login"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/mmedium"
+            android:paddingStart="2dp"
+            android:text="Login Disini"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@drawable/text_button_color" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
